@@ -177,13 +177,16 @@ a.blnks:hover {
 }
 
 
-.brlnks {
-    display: inline-block;
-    padding: 3px 32px 3px 0px;
-    font-size: 14px;
-    margin-left: 210px;
-    line-height: 2px;
-    font-size: 14px;
+
+a.bllnks:link {
+    color: #1A0DAB;
+}
+
+a.bllnks:visited {
+    color: #1A0DAB;
+}
+a.bllnks:hover {
+    text-decoration: underline;
 }
 
 .oogle {
