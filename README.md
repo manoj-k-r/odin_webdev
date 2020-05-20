@@ -1,2 +1,3 @@
 # odin_webdev
-Practice for odin
+
+This is a master repository for odin project assignments
