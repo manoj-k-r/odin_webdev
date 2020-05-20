@@ -1,23 +1,22 @@
-let rn=1;
+        let rn=1;
         let us=0;
         let cs=0;
-        function roundtracker(){
+        function roundTracker(){
             document.getElementById("roundno").textContent=`Round: ${rn}`;
         }
-        roundtracker();
-        function userstracker(){
+        roundTracker();
+        function usersTracker(){
             document.getElementById("userscor").textContent=us;
         }
-        userstracker();
+        usersTracker();
         function compstracker() {
             document.getElementById("compscor").textContent=cs;
         }
-        compstracker();
+        compsTracker();
         function gmOvr() {
             if (rn==6) {
                 let over=document.getElementById("over");
                 over.style.padding="0px";
-                let winner;
                 if(us>cs){
                     over.textContent="Congrats! You beat the computer!";
                 }
@@ -29,8 +28,8 @@ let rn=1;
                 }
                
                 document.getElementById("roundno").textContent="Game Over";
-                userstracker();
-                compstracker();
+                usersTracker();
+                compsTracker();
                 let btnArr=["rock","paper","scissors"];
                 for (i=0;i<=2;i++) {
                     let btn=document.getElementById(btnArr[i]);
@@ -55,8 +54,8 @@ let rn=1;
                     let res=`You won Round ${rn}. Computer chose ${cap(b)}!`; 
                     rn++;
                     us++;
-                    roundtracker();
-                    userstracker();
+                    roundTracker();
+                    usersTracker();
                     gmOvr();
                     return res;
                 }
@@ -64,15 +63,15 @@ let rn=1;
                     let res=`You lost Round ${rn}. Computer chose ${cap(b)}!`; 
                     rn++;
                     cs++;
-                    compstracker();
-                    roundtracker();
+                    compsTracker();
+                    roundTracker();
                     gmOvr();
                     return res;
                 }
                 else if(a==b) {
                     let res=`Computer chose ${cap(b)} as well! Round ${rn} was a tie.`;
                     rn++;
-                    roundtracker();
+                    roundTracker();
                     gmOvr();
                     return res;
                 }
@@ -93,9 +92,9 @@ let rn=1;
             rn=1;
             us=0;
             cs=0;
-            roundtracker();
-            userstracker();
-            compstracker();
+            roundTracker();
+            usersTracker();
+            compsTracker();
             let over=document.getElementById("over");
             over.style.padding="20px";
             over.textContent="";
