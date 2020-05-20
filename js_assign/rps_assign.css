@@ -1,0 +1,52 @@
+body {
+    text-align: center;
+    background-color: lavender;
+    font-family: 'Acme', arial;
+}
+
+button {
+    border: 1px solid #f2f2f2 ;
+    margin-top: 20px;    
+    padding: 10px;
+    font-family: 'Fredericka the Great', arial;
+    font-size: 40px !important;
+    border-radius: 4px;
+    color:white;
+    box-shadow: 5px 5px grey;
+}
+#rock:focus, #paper:focus, #scissors:focus, #reset:focus {
+    outline: none;
+    box-shadow: 5px 5px grey;
+}
+
+#rock:hover, #paper:hover, #scissors:hover, #reset:hover{
+    box-shadow: none;
+  
+}
+#rock {
+    background-color:black;
+}
+
+#paper {
+
+    background-color: blue;
+}
+#scissors {
+    background-color: darkgreen;
+}
+#reset {
+    background-color: red;
+}
+p {
+    font-size: 32px;
+}
+h1 {
+    font-size: 42px;
+}
+#over {
+    padding: 20px;
+    animation: blinker 1s linear infinite
+}
+@keyframes blinker {
+    50% {opacity:0;}
+}
