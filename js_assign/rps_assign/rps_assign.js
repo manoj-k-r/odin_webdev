@@ -17,7 +17,6 @@ let rn=1;
             if (rn==6) {
                 let over=document.getElementById("over");
                 over.style.padding="0px";
-                let winner;
                 if(us>cs){
                     over.textContent="Congrats! You beat the computer!";
                 }
@@ -40,6 +39,9 @@ let rn=1;
             }
         } 
         function playGame(uc) {
+            let clicked=document.getElementById(`${uc}`);
+            clicked.classList.add("click");
+
             document.getElementById("over").textContent="";
             let result=document.getElementById("results");
             result.style.padding="0px";
@@ -83,6 +85,8 @@ let rn=1;
             }
         }
         function reset(){
+            let clicked=document.getElementById("reset");
+            clicked.classList.add("click");
             let btnArr=["rock","paper","scissors"];
             let btnClr=["black","blue","green"]
                 for (i=0;i<=2;i++) {
@@ -103,7 +107,14 @@ let rn=1;
             result.style.padding="20px";
             result.textContent="";
         }
+        function removeTransition(e) {
+            if (e.propertyName != 'transform') return;
+            this.classList.remove('click');
+        }
+        let buttons=document.querySelectorAll("button");
+        buttons.forEach(button => button.addEventListener('transitionend', removeTransition))
         document.querySelector("#rock").addEventListener('click', () => {playGame("rock")});
         document.querySelector("#paper").addEventListener('click', () => {playGame("paper")});
         document.querySelector("#scissors").addEventListener('click', () => {playGame("scissors")});
+
     

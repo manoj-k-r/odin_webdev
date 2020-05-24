@@ -13,6 +13,7 @@ button {
     border-radius: 4px;
     color:white;
     box-shadow: 5px 5px grey;
+    transition: all 0.1s; 
 }
 #rock:focus, #paper:focus, #scissors:focus, #reset:focus {
     outline: none;
@@ -20,9 +21,14 @@ button {
 }
 
 #rock:hover, #paper:hover, #scissors:hover, #reset:hover{
-    box-shadow: none;
+   
+    box-shadow: none; }
   
-}
+
+ .click {
+     transform: scale(0.9);
+     
+ }
 #rock {
     background-color:black;
 }
@@ -45,7 +51,7 @@ h1 {
 }
 #over {
     padding: 20px;
-    animation: blinker 1s linear infinite
+    animation: blinker 1s linear infinite;
 }
 @keyframes blinker {
     50% {opacity:0;}
