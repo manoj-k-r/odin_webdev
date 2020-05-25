@@ -15,6 +15,8 @@ gridSqs.forEach(gridSq => gridSq.addEventListener("mouseover", () => {addBlack(g
 }
 
 function toggleColor() {
+    let tgl=document.getElementById("toggleClr");
+    tgl.classList.add("click");
     let gridSqs=document.querySelectorAll("div[class=grid]");
     if (colorState==false) {
         colorState=true;
@@ -51,6 +53,8 @@ function addRandom(a) {
 }
 
 function clearGrid() {
+    let clr=document.getElementById("clear");
+    clr.classList.add("click");
     let colorSqs=document.querySelectorAll(`div[class="grid"]`);
     colorSqs.forEach(colorSq => colorSq.style.backgroundColor="");
 }
@@ -67,4 +71,10 @@ function createNewGrid(){
     }
     gridBuild(sideDim);
 }
+function rmTransition(e) {
+    if (e.propertyName!="transform") return;
+    this.classList.remove("click");
+}
+let btns=document.querySelectorAll("button");
+btns.forEach( btn => btn.addEventListener("transitionend", rmTransition))
 gridBuild(32);
