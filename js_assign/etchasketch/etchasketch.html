@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="./eas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <head>
+        <title>Etch-A-Sketch</title>
+    </head>
+    <body>
+        <h1>Draw on the Board by hovering your mouse</h1>
+        <div id="navbar">
+        <button style="margin-left: 0px;" id="clear" onclick="clearGrid()">Clear Canvas</button>
+        <button id="newGrid" onclick="createNewGrid()">New Canvas</button>
+        <button id="toggleColor" onclick="toggleColor()">Toggle Color</button>
+        </div>
+        <div id="maincontainer">
+        <div id="container"></div>
+        </div>
+    </body>
+    <script src="./eas.js"></script>
+</html>
