@@ -96,16 +96,14 @@
         border-radius: 20px 0px 0px 0px;
         width: 157.5px;
         vertical-align: top;
-
-
+        background-color: aquamarine;
     }
     .number {
         background-color: rgb(121, 235, 86);
     }
     #delete {
         width: 157.5px;
-
-
+        background-color: aquamarine;
     }
 
     #divide {
