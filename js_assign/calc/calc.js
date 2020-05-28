@@ -12,18 +12,11 @@
     function divs(a,b) {
         return (a/b).toFixed(4);
     }
-    function pow(a,b) {
-        return (a**b).toFixed(4);
-    }
-    function rt(a,b) {
-        return (a**divs(1,b)).toFixed(4);
-    }
 
     let displayArr=[""];; //display string
-    let opArr=["+","-","/","*","^","√"];
-    let mdArr=["*","/","^","√"];
+    let opArr=["+","-","/","*"];
+    let mdArr=["*","/"];
     let asArr=["+","-"];
-    let prArr=["^", "√"]
 
     function getNumArr(arr) { //convert strings to numbers
         let numArr= arr.map( ele => { 
@@ -45,22 +38,19 @@
                 switch (numArr[i]) {
                     case "+":
                         return add(numArr[index-1],numArr[index+1]);
+                        break;
                     case "-":
                         return sub(numArr[index-1],numArr[index+1]);
+                        break;
                     case "/":
                         if (numArr[index+1]==0) {
                             return "ERROR";
                         }
                         return divs(numArr[index-1],numArr[index+1]);
+                        break;
                     case "*":
                         return mult(numArr[index-1],numArr[index+1]);
-                    case "√":
-                        if (numArr[index-1]==0) {
-                            return "ERROR";
-                        }
-                        return rt(numArr[index+1],numArr[index-1]);
-                    case "^":
-                        return pow(numArr[index-1],numArr[index+1]);
+                        break;
                 }
             }
         }
@@ -175,7 +165,8 @@
 
         if (btn.className=="opn") { //operator button clicks
             dot.disabled=false;
-            if (displayArr[0]==".") { //cannot have just a dot at the start
+            if (displayArr.slice(-1)==".") { //cannot have just a dot at the end when operator is clicked
+                dot.disabled=true;
                 return;
             }
             else if (displayArr[0]=="") { //cannot start with * /operator 
@@ -214,15 +205,15 @@
                             secDisp.value="";
                             return;    
                         } 
-                    if (displayArr.length==5) { //if mutliply/divide/pw/root was done after a plus/minus compute everything now
+                    if (displayArr.length==3) { //if mutliply/divide was done after a plus/minus compute everything now
                         if (displayArr.includes("ERROR")) { 
                             disp.value="ERROR";
                             displayArr=[""];
                             secDisp.value="";
                             return;    
                         } 
-                        ans=operate(displayArr.slice[3,5]).toString();
-                        displayArr=displayArr.slice[0,3];
+                        ans=operate(displayArr).toString();
+                        displayArr=[];
                         displayArr.push(checkDecimal(ans));
                     }
                     displayArr.push(btn.textContent);
@@ -238,56 +229,7 @@
                 }
             }
             else if (mdArr.includes(btn.textContent)) { 
-                if (prArr.includes(btn.textContent)) {
-                    if (prArr.includes(displayArr[displayArr.length-2])) {
-                        let tempArr=displayArr.slice(displayArr.length-3,displayArr.length)
-                        let ans=operate(tempArr).toString();
-                        displayArr=displayArr.slice(0, displayArr.length-3);
-                        displayArr.push(checkDecimal(ans));
-                        if (displayArr.includes("ERROR")) { 
-                                disp.value="ERROR";
-                                displayArr=[""];
-                                secDisp.value="";
-                                return;    
-                            } 
-                        if (displayArr.length==5) { //if pw/root was done before compute everything now
-                            let tempArr=displayArr.slice(displayArr.length-3,displayArr.length)
-                            let ans=operate(tempArr).toString();
-                            tempArr=displayArr.slice(0, displayArr.length-3);
-                            tempArr.push(checkDecimal(ans));
-                            if (tempArr.includes("ERROR")) { 
-                                disp.value="ERROR";
-                                displayArr=[""];
-                                secDisp.value="";
-                                return;    
-                            }    
-                            if (tempArr.length==3) { //if pw/root was done after a multiply/divide compute everything now
-                            if (tempArr.includes("ERROR")) { 
-                                disp.value="ERROR";
-                                displayArr=[""];
-                                secDisp.value="";
-                                return;    
-                            } 
-                            ans=operate(tempArr).toString();
-                            } 
-                            ans=operate(displayArr.slice[3,5]).toString();
-                            displayArr=displayArr.slice[0,3];
-                            displayArr.push(checkDecimal(ans));
-                        }
-                        displayArr.push(btn.textContent);
-                        displayArr.push("");
-                        secDisp.value=displayArr.join("");
-                        disp.value="";
-                    }
-                    else {
-                        displayArr.push(btn.textContent);
-                        secDisp.value=displayArr.join("");
-                        disp.value="";
-                        displayArr.push(""); 
-                    }
-                }
-                
-                else if (mdArr.includes(displayArr[displayArr.length-2])) {
+                if (mdArr.includes(displayArr[displayArr.length-2])) {
                     let tempArr=displayArr.slice(displayArr.length-3,displayArr.length)
                     let ans=operate(tempArr).toString();
                     displayArr=displayArr.slice(0, displayArr.length-3);
@@ -298,31 +240,6 @@
                             secDisp.value="";
                             return;    
                         } 
-                        if (displayArr.length==5) { //if pw/root was done before compute everything now
-                            let tempArr=displayArr.slice(displayArr.length-3,displayArr.length)
-                            let ans=operate(tempArr).toString();
-                            tempArr=displayArr.slice(0, displayArr.length-3);
-                            tempArr.push(checkDecimal(ans));
-                            if (tempArr.includes("ERROR")) { 
-                                disp.value="ERROR";
-                                displayArr=[""];
-                                secDisp.value="";
-                                return;    
-                            }    
-                            if (tempArr.length==3) { //if mutliply/divide was done after a plus/minus compute everything now
-                            if (tempArr.includes("ERROR")) { 
-                                disp.value="ERROR";
-                                displayArr=[""];
-                                secDisp.value="";
-                                return;    
-                            } 
-                            ans=operate(tempArr).toString();
-                            } 
-                            ans=operate(displayArr.slice[3,5]).toString();
-                            displayArr=displayArr.slice[0,3];
-                            displayArr.push(checkDecimal(ans));
-                        }
-                    
                     displayArr.push(btn.textContent);
                     displayArr.push("");
                     secDisp.value=displayArr.join("");
@@ -418,9 +335,6 @@
                 if(!dot.disabled) {
                     clicking("dot");
                 }
-                break;
-            case "^":
-                clicking("pw");
                 break;
          }
     }
