@@ -94,7 +94,6 @@
 
     #ac {
         border-radius: 20px 0px 0px 0px;
-        width: 157.5px;
         vertical-align: top;
 
 
@@ -103,22 +102,18 @@
         background-color: rgb(121, 235, 86);
     }
     #delete {
-        width: 157.5px;
-
-
+        vertical-align:top;
     }
 
-    #divide {
+
+    #rt {
         border-radius: 0px 20px 0px 0px;
         vertical-align: top;
         
 
     }
-    #equal {
+    #minus {
         border-radius: 0px 0px 20px 0px;
-        width: 210px;
-        
-
     }
     #dot {
         border-radius: 0px 0px 0px 20px;
