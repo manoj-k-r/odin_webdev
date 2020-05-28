@@ -1,0 +1,127 @@
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #container {
+        height: 750px;
+        width: 470px;
+        border: 1px solid black;
+        border-radius: 5%;
+        background-color: rgb(73, 3, 88);
+        box-shadow: 0 0 40px grey;
+        margin-top: 10px;
+    }
+    #displayContainer {
+        display: block;
+        height: 145px;
+        width: 420px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin: 25px 25px;
+        text-align: right;
+        background-color: rgb(237, 226, 247);
+        
+    }
+    #secDisplay {
+        margin-top: 20px;
+        margin-right: 12px;
+        height: 30px;
+        width: 390px;
+        background-color: inherit;
+        font-size: 20px;
+        text-align: right;
+        border: none;
+        font-family: 'Bitter', sans-serif;
+
+    }
+
+    #display {
+        margin-top: 10px;
+        margin-right: 12px;
+        height: 50px;
+        width: 390px;
+        background-color: inherit;
+        font-size: 40px;
+        text-align: right;
+        border: none;
+        font-family: 'Bitter', sans-serif;
+
+    }
+    #btnContainer {
+        height: 525px;
+        width: 420px;
+        background-color: lightgray;
+        border-radius: 20px;
+        margin-bottom: 25px;
+        margin-right: 25px;
+        margin-left: 25px;
+        font-size: 0px;
+    }
+
+    
+    button {
+        
+        text-align: center;
+        height: 105px;
+        width: 105px;
+        font-family: 'Bitter', sans-serif;
+        font-size: 40px !important;
+        background-color: rgb(248, 188, 76);
+        margin: 0;
+        padding: 0;
+        border: 1px solid grey;
+        transition: all 0.05s;
+        font-weight:bolder;
+        
+    }
+
+    .opn {
+        background-color: rgb(191, 240, 113);
+    }
+    
+    input:hover {
+        cursor: default;
+    }
+
+    input:focus, button:focus {
+        outline: none;
+    }
+    .clicked {
+        transform: scale(0.9);
+    }
+
+    #ac {
+        border-radius: 20px 0px 0px 0px;
+        width: 157.5px;
+        vertical-align: top;
+
+
+    }
+    .number {
+        background-color: rgb(121, 235, 86);
+    }
+    #delete {
+        width: 157.5px;
+
+
+    }
+
+    #divide {
+        border-radius: 0px 20px 0px 0px;
+        vertical-align: top;
+        
+
+    }
+    #equal {
+        border-radius: 0px 0px 20px 0px;
+        width: 210px;
+        
+
+    }
+    #dot {
+        border-radius: 0px 0px 0px 20px;
+
+    }
+    
