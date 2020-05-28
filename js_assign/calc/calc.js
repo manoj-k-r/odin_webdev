@@ -90,7 +90,7 @@
             displayArr[displayArr.length-1]=displayArr[displayArr.length-1].slice(0,displayArr[displayArr.length-1].length-1); //remove last character of the last element
             disp.value=displayArr[displayArr.length-1];
             secDisp.value=displayArr.join("");
-            if (!displayArr.join("").includes(".")) {
+            if (!displayArr[displayArr.length-1].includes(".")) {
                 dot.disabled=false;
             }
         }
@@ -101,7 +101,7 @@
             dot.disabled=true; //disable dot unless operator is pressed
         }
         else if (btn=="equal") {
-            if (displayArr[0]=="" || asArr.includes(displayArr[0]) || displayArr[displayArr.length-1]=="."){ //if clicked at start
+            if (displayArr[0]=="" || asArr.includes(displayArr[displayArr.length-1]) || displayArr[displayArr.length-1]=="."){ //if clicked at start
                 return;
             }
             if (opArr.includes(displayArr[displayArr.length-2]) && displayArr[displayArr.length-1]=="") { //if clicked after symbol
@@ -109,7 +109,7 @@
             }
             
             if (displayArr.length==5) { //equal to in a 3 number expression (like 1+2*3)
-                let tempArr=displayArr.slice(displayArr.length-3,displayArr.length)
+                let tempArr=displayArr.slice(displayArr.length-3,displayArr.length);
                 let ans=operate(tempArr).toString();
                 tempArr=displayArr.slice(0, displayArr.length-3);
                 tempArr.push(checkDecimal(ans));
@@ -139,7 +139,7 @@
 
 
             }
-            else if (displayArr.length>1) { //equal to works only when there is an operation not when there is just a number
+            else if (!asArr.includes(displayArr[displayArr.length-1]) && displayArr.length>1) { //equal to works only when there is an operation not when there is just a number
                 displayArr.push("=");
                 secDisp.value=displayArr.join("");
 
