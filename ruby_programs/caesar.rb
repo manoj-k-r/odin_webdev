@@ -10,7 +10,7 @@ def caesar_cipher(str,shift)
           alpha_arr[(alpha_arr.index(letter.downcase)+shift)%26]
         else
           alpha_arr[(alpha_arr.index(letter.downcase)+shift)%26].upcase
-        end
+      end
     else
       letter #punctuations
     end

@@ -7,9 +7,8 @@ def stock_picker(arr)
     end
     def sell_after_buy(arr,combo) # ensures if two days with same price sell day is after buy day
         if arr.index(combo[0])>arr.index(combo[1])
-            temp_arr=arr
-            temp_arr[arr.index(combo[1])]=-1
-            sell_after_buy(temp_arr,combo)
+            arr[arr.index(combo[1])]=-1
+            sell_after_buy(arr,combo)
         else
             return [arr.index(combo[0]),arr.index(combo[1])]
         end
