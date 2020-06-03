@@ -1,3 +1,4 @@
+#given a string and a shift convert all letters keeping punctuation
 def caesar_cipher(str,shift)
   alpha_arr=Array.new
   for i in 97..122
