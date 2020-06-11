@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+#mainContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+    width: 600px;
+    border: 1px solid black;
+    margin-top: 60px;
+}
+
+#container {
+    width: 540px;
+    height: 540px;
+    line-height: 0;
+}
+.play_area {
+    margin: 0 !important;
+    width:170px;
+    height:170px;
+    font-size: 100px;
+    display: inline-flex;
+    vertical-align: top;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+#p00 {
+    border-right: 9px solid black;
+    border-bottom: 9px solid black;
+}
+#p02 {
+    border-left: 9px solid black;
+    border-bottom: 9px solid black;
+}
+
+#p01 {
+    border-bottom: 9px solid black;
+}
+#p10 {
+    border-right: 9px solid black;
+    border-bottom: 9px solid black;
+}
+
+#p11 {
+    border-bottom: 9px solid black;
+}
+
+#p12 {
+    border-left: 9px solid black;
+    border-bottom: 9px solid black;
+}
+
+#p20 {
+    border-right: 9px solid black;
+}
+
+#p22 {
+    border-left: 9px solid black;
+}
+
+#result {
+    position: absolute;
+    bottom: 30px;
+}
