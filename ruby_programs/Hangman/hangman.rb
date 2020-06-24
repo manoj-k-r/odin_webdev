@@ -21,7 +21,6 @@ class Game
                 words=IO.readlines('word_list.txt', chomp: true)
                 @rand_word=words[rand(words.length)].downcase
                 dash="_"        
-                puts @rand_word
                 for i in 0...@rand_word.length
                     dash_arr.append(dash)
                 end
