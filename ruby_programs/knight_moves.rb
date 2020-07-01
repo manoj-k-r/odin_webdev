@@ -1,3 +1,4 @@
+#takes two coordinates on a chess board. Finds the shortest path a knight can take from one to another.
 class Move
     attr_accessor :coord, :previous
     def initialize(coord,previous=nil)
@@ -55,7 +56,7 @@ end
   def display_path(move, result=[])
     if move==nil
       path=result.reverse
-      puts "You need #{path.length-1} moves. The moves are:\n"
+      puts "The knight needs #{path.length-1} moves. The moves are:\n"
       for i in path
        p i
       end
@@ -68,7 +69,7 @@ end
   end
 
 
-knight_moves([0,0],[1,1])
+knight_moves([0,0],[7,0])
       
 
 
